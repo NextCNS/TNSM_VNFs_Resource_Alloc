@@ -7,7 +7,7 @@ import TotalNetwork as tn
 ranSlices = tn.createRANSlice(tn.numRnSlices, tn.numVnfFunctions, tn.resList, tn.resCtPerVnf, connectivity=tn.vnfDegree, random_range=0)
 substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, resCtPerSbs=tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=0)
 
-out.generateSbsTestResults(ranSlices, substrateNetwork)
+# out.generateSbsTestResults(ranSlices, substrateNetwork)
  
 tn.numSubsNodes = 100
 tn.numVnfFunctions = 100

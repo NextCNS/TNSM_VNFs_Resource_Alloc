@@ -59,7 +59,7 @@ def generateSbsTestResults(ranSlices, substrateNetwork):
     # ranSlices = tn.createRANSlice(tn.numRnSlices, tn.numVnfFunctions, tn.resList, tn.resCtPerVnf, connectivity=tn.vnfDegree, random_range=0)
     # substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, resCtPerSbs=tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=0)
 
-    # First testing - Abundance
+    # First testing - Abundance ----------------------------------
     returnOne = testSbs.testParameters(1, substrateNetwork, ranSlices)
     returnTwo = testSbs.testParameters(2, substrateNetwork, ranSlices)
     returnThree = testSbs.testParameters(3, substrateNetwork, ranSlices)
