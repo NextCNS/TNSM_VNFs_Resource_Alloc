@@ -6,7 +6,7 @@ import random
 import TotalNetwork as tn
 import matplotlib.pyplot as plt
 
-# (1) No. of Connections Sbs vs No. of Succesfull Mapings 
+# (1) No. of Connections vnf vs No. of Succesfull Mapings 
 
 def testSuccMappings(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = tn.intervalFactor, iterations=tn.iterCount):
 
@@ -47,7 +47,7 @@ def testSuccMappings(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = t
     returnData = [xOne, yOne]
     return returnData;
 
-# (2) No. of Connections Sbs vs No. of UnSuccesfull Mapings 
+# (2) No. of Connections vnf vs No. of UnSuccesfull Mapings 
 
 def testUnsuccMappings(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = tn.intervalFactor, iterations=tn.iterCount):
 
@@ -89,7 +89,7 @@ def testUnsuccMappings(algoType, connectivityVnf= tn.vnfDegree, intervalFactor =
     return returnData;
 
 
-# (3) No. of Connections Sbs vs Amount of Sbs. Resouces Unused.
+# (3) No. of Connections vnf vs Amount of Sbs. Resouces Unused.
 
 def testAvailRes(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = tn.intervalFactor, iterations=tn.iterCount):
 
@@ -132,7 +132,7 @@ def testAvailRes(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = tn.in
     return returnData;
 
 
-# (4) No. of Connections Sbs vs Amount of Sbs. Resouces Exhausted
+# (4) No. of Connections vnf vs Amount of Sbs. Resouces Exhausted
 
 def testExhaustRes(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = tn.intervalFactor, iterations=tn.iterCount):
 

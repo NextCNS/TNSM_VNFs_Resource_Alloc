@@ -3,6 +3,8 @@ import numpy as np
 import random
 import TotalNetwork as tn
 
+#CBA
+
 def algorithmFour(totalNetwork, resCapList, vnfCncList, greedy_method=True):
     
     vnfCncList = tn.getUpdatedCncList(totalNetwork)

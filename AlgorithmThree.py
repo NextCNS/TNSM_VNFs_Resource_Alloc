@@ -3,6 +3,7 @@ import numpy as np
 import TotalNetwork as tn
 import random
 
+# GBA
 def algorithmThree(totalNetwork, vnfTotalAccList):
     
     # Sorting the list of maximal connections for the VNF Functions

@@ -3,6 +3,7 @@ import numpy as np
 import TotalNetwork as tn
 import random
 
+#GCBA
 def algorithmTwo(totalNetwork, vnfCncList):
     
     # Sorting the list of maximal connections for the VNF Functions

@@ -3,6 +3,7 @@ import numpy as np
 import random
 import TotalNetwork as tn
 
+#RBA
 def algorithmOne(totalNetwork, resList, resCapList, greedy_method):
     
     resList = tn.getUpdatedResList(totalNetwork)

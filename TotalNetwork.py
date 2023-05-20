@@ -6,6 +6,7 @@ import AlgorithmThree as algoThree
 import AlgorithmFour as algoFour
 from graph_tool.all import *
 import random
+import time
 
 iterCount = 5
 randUpBoundSbs = -2
@@ -158,7 +159,13 @@ def algoOneTest(totalNetwork, substrateNetwork = Graph(directed=False), ranSlice
     resCapList = getUpdatedResList(totalNetwork, layer = "Substrate")
     
     # Testing Algorithm One 
+    st = time.process_time()
     maxGreedyMapping = algoOne.algorithmOne(totalNetwork, resList, resCapList, True)
+    et = time.process_time()
+    res = et - st
+    f = open("./RunTime.txt", "a")
+    f.write(f"run time of algo one is {res} seconds \n")
+    f.close()
     graph_draw(totalNetwork, vertex_text = totalNetwork.vertex_properties.get("resourceCapacity"), output="Graph-Figures/algo_one_sbs.png", inline_scale=10)
     graph_draw(totalNetwork, vertex_text = totalNetwork.vertex_properties.get("resources"), output="Graph-Figures/algo_one_vnf.png", inline_scale=10)
     
@@ -194,8 +201,13 @@ def getUpdatedResList(totalNetwork, layer = "RAN"):
 def algoTwoTest(totalNetwork, vnfCncList = []):
 
     vnfCncList = getUpdatedCncList(totalNetwork)
-
+    st = time.process_time()
     neighborhoodMapping = algoTwo.algorithmTwo(totalNetwork, vnfCncList)
+    et = time.process_time()
+    res = et - st
+    f = open("./RunTime.txt", "a")
+    f.write(f"run time of algo two is {res} seconds \n")
+    f.close()
     graph_draw(totalNetwork, vertex_text = totalNetwork.vertex_properties.get("resourceCapacity"), output="Graph-Figures/algo_two_sbs.png", inline_scale=10)
     graph_draw(totalNetwork, vertex_text = totalNetwork.vertex_properties.get("resources"), output="Graph-Figures/algo_two_vnf.png", inline_scale=10)
     print("Algo Two Mapping - " + str(neighborhoodMapping))
@@ -267,8 +279,13 @@ def getUpdatedCncList(totalNetwork, layer = "RAN"):
 def algoThreeTest(totalNetwork, vnfTotalAccList = []):
 
     vnfTotalAccList = getUpdatedResourcesAcc(totalNetwork)
-
+    st = time.process_time()
     neighborhoodMappingTwo = algoThree.algorithmThree(totalNetwork, vnfTotalAccList)
+    et = time.process_time()
+    res = et - st
+    f = open("./RunTime.txt", "a")
+    f.write(f"run time of algo three is {res} seconds \n")
+    f.close()
     graph_draw(totalNetwork, vertex_text = totalNetwork.vertex_properties.get("resourceCapacity"), output="Graph-Figures/algo_three_sbs.png", inline_scale=10)
     graph_draw(totalNetwork, vertex_text = totalNetwork.vertex_properties.get("resources"), output="Graph-Figures/algo_three_vnf.png", inline_scale=10)
     print("Algo Three Mapping - " + str(neighborhoodMappingTwo))
@@ -280,8 +297,14 @@ def algoFourTest(totalNetwork, substrateNetwork = Graph(directed=False), ranSlic
     resCapList = getUpdatedResList(totalNetwork, layer = "Substrate")
     vnfCncList = getUpdatedCncList(totalNetwork)
     
-    # Testing Algorithm One 
+    # Testing Algorithm One
+    st = time.process_time()
     maxGreedyMapping = algoFour.algorithmFour(totalNetwork, resCapList, vnfCncList, True)
+    et = time.process_time()
+    res = et - st
+    f = open("./RunTime.txt", "a")
+    f.write(f"run time of algo four is {res} seconds \n")
+    f.close()
     graph_draw(totalNetwork, vertex_text = totalNetwork.vertex_properties.get("resourceCapacity"), output="Graph-Figures/algo_one_sbs.png", inline_scale=10)
     graph_draw(totalNetwork, vertex_text = totalNetwork.vertex_properties.get("resources"), output="Graph-Figures/algo_one_vnf.png", inline_scale=10)
     
