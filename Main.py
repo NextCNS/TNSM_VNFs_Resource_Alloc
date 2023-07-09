@@ -10,9 +10,11 @@ substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, resCtPerS
 # out.generateSbsTestResults(ranSlices, substrateNetwork)
  
 tn.numSubsNodes = 100
-tn.numVnfFunctions = 100
+tn.numVnfFunctions = 160
 
-out.generateVnfTestResults(ranSlices, substrateNetwork)
+# out.generateVnfTestResults(ranSlices, substrateNetwork)
+out.generateVnfConTestResults()
+# out.generateSbsConTestResults()
 
 
 # Process(target=out.generateSbsTestResults, args=(ranSlices, substrateNetwork,))

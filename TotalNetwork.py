@@ -1,17 +1,18 @@
 import Substrate as sbs
 import RAN_Slice as ran
-import AlgorithmOne as algoOne
-import AlgorithmTwo as algoTwo
-import AlgorithmThree as algoThree
-import AlgorithmFour as algoFour
+import Algorithms.RBA as algoOne
+import Algorithms.GCBA as algoTwo
+import Algorithms.GBA as algoThree
+import Algorithms.CBA as algoFour
 from graph_tool.all import *
 import random
 import time
 
+
 iterCount = 5
-randUpBoundSbs = -2
+randUpBoundSbs = 2
 randUpBoundVnf = 4
-intervalFactor = 20
+intervalFactor = 2
 varSbsDeg = 2
 varSbsBand = -2
 
@@ -19,7 +20,7 @@ varSbsBand = -2
 numSubsNodes = 60
 resCapList = []
 resCtPerSbs = 4
-sbsDegree = 4
+sbsDegree = 2
 substrateNetwork = 0
 sbsBandValue = 5
 
@@ -29,7 +30,7 @@ resList = []
 numRnSlices = 1
 vnfBandValue = 3
 vnfDegree = 2
-numVnfFunctions = 200
+numVnfFunctions = 240
 resCtPerVnf = 2
 vnfCncList = []
 vnfTotalAccList = []

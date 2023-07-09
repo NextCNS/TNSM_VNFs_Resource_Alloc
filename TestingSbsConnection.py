@@ -1,6 +1,6 @@
-import AlgorithmOne as algoOne
-import AlgorithmTwo as algoTwo
-import AlgorithmThree as algoThree
+import Algorithms.RBA as algoOne
+import Algorithms.GCBA as algoTwo
+import Algorithms.GBA as algoThree
 from graph_tool.all import *
 import random
 import TotalNetwork as tn
@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 # ---------------------------------------------------------------------------------------------------
 
 # (1) No. of Connections Sbs vs No. of Succesfull Mapings 
+intervalFactor = -1
 
 def testSuccMappings(algoType,  connectivitySbs = tn.sbsDegree, intervalFactor = tn.intervalFactor, iterations = tn.iterCount):
 
@@ -23,7 +24,7 @@ def testSuccMappings(algoType,  connectivitySbs = tn.sbsDegree, intervalFactor =
         
         # One
         
-        substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity, random_range=tn.randUpBound)
+        substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity, random_range=tn.randUpBoundSbs)
         totalNetwork  = tn.createTotalNetwork(substrateNetwork, ranSlices)
             
         if algoType == 1:
@@ -65,7 +66,7 @@ def testUnsuccMappings(algoType, connectivitySbs = tn.sbsDegree, intervalFactor 
         
         # One
         
-        substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity, random_range=tn.randUpBound)
+        substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity, random_range=tn.randUpBoundSbs)
         totalNetwork  = tn.createTotalNetwork(substrateNetwork, ranSlices)
             
         if algoType == 1:
@@ -106,7 +107,7 @@ def testAvailRes(algoType,  connectivitySbs = tn.sbsDegree, intervalFactor = tn.
         
         # One
         
-        substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity, random_range=tn.randUpBound)
+        substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity, random_range=tn.randUpBoundSbs)
         totalNetwork  = tn.createTotalNetwork(substrateNetwork, ranSlices)
             
         if algoType == 1:
@@ -149,7 +150,7 @@ def testExhaustRes(algoType,  connectivitySbs = tn.sbsDegree, intervalFactor = t
         
         # One
         
-        substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity, random_range=tn.randUpBound)
+        substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity, random_range=tn.randUpBoundSbs)
         totalNetwork  = tn.createTotalNetwork(substrateNetwork, ranSlices)
             
         if algoType == 1:

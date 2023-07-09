@@ -107,6 +107,7 @@ def generateSbsTestResults(ranSlices, substrateNetwork):
     resultThree = [returnThree[0], returnThree[1]]
     resultFour = [returnFour[0], returnFour[1]]
     
+    # Shortage case ---------------------------------
     output_text = open(r"ResultsOne/num-sbs-tower-res_deficit.txt", "w")
     output_text.writelines("Resource Deficit for Substrate")
     
@@ -370,3 +371,118 @@ def varBandSbs(sbsNetwork, newSbsBand):
     
     for edge in sbsNetwork.edges():
         sbsNetwork.ep.bandwidth[edge] += random.randint(tn.varSbsBand, 0)
+
+def generateSbsConTestResults():
+
+    xLabel = "Connection Per Substrate Tower"
+    outputTitle = "Independent Variable - Degree Per Substrate Tower"
+
+    # First Testing Against Succesfull Mappings
+
+    resultOne = testSbsCon.testSuccMappings(1,6)
+    resultTwo = testSbsCon.testSuccMappings(2, 6)
+    resultThree = testSbsCon.testSuccMappings(3, 6)
+    resultFour = testSbsCon.testSuccMappings(4, 6)
+
+    savedLocation = "ResultsTwo/sbsConOne.png"
+    yLabel = "Number of Succesfull Mappings"
+
+    # Now that we have all the results with the subsequent arrays
+
+    outputFigure(resultOne, resultTwo, resultThree, resultFour, xLabel, yLabel, outputTitle, savedLocation)
+
+    # Now test against Unsucessfull Mappings
+
+    resultOne = testSbsCon.testUnsuccMappings(1, 6)
+    resultTwo = testSbsCon.testUnsuccMappings(2, 6)
+    resultThree = testSbsCon.testUnsuccMappings(3, 6)
+    resultFour = testSbsCon.testUnsuccMappings(4, 6)
+    savedLocation = "ResultsTwo/sbsConTwo.png"
+    yLabel = "Number of Unsuccesfull Mappings"
+
+    #  Now that we have all the results with the subsequent arrays
+
+    outputFigure(resultOne, resultTwo, resultThree, resultFour, xLabel, yLabel, outputTitle, savedLocation)
+
+    # Test Against Avail Resources
+
+    resultOne = testSbsCon.testAvailRes(1, 6)
+    resultTwo = testSbsCon.testAvailRes(2, 6)
+    resultThree = testSbsCon.testAvailRes(3, 6)
+    resultFour = testSbsCon.testAvailRes(4, 6)
+    savedLocation = "ResultsTwo/sbsConThree.png"
+    yLabel = "Amount of Available Resources"
+
+    #  Now that we have all the results with the subsequent arrays
+
+    outputFigure(resultOne, resultTwo, resultThree, resultFour, xLabel, yLabel, outputTitle, savedLocation)
+
+    # Test Against Avail Resources
+
+    resultOne = testSbsCon.testExhaustRes(1, 6)
+    resultTwo = testSbsCon.testExhaustRes(2, 6)
+    resultThree = testSbsCon.testExhaustRes(3, 6)
+    resultFour = testSbsCon.testExhaustRes(4, 6)
+    savedLocation = "ResultsTwo/sbsConFour.png"
+    yLabel = "Amount of Exhausted Resources"
+
+    #  Now that we have all the results with the subsequent arrays
+
+    outputFigure(resultOne, resultTwo, resultThree, resultFour, xLabel, yLabel, outputTitle, savedLocation)
+
+def generateVnfConTestResults():
+
+    xLabel = "Connection Per VNF Function"
+    outputTitle = "Independent Variable - Degree Per VNF Function"
+
+    # First Testing Against Succesfull Mappings
+
+    resultOne = testVnfCon.testSuccMappings(1, 6)
+    resultTwo = testVnfCon.testSuccMappings(2, 6)
+    resultThree = testVnfCon.testSuccMappings(3, 6)
+    resultFour = testVnfCon.testSuccMappings(4, 6)
+    savedLocation = "ResultsFour/vnfConOne.png"
+    yLabel = "Number of Succesfull Mappings"
+
+    # Now that we have all the results with the subsequent arrays
+
+    outputFigure(resultOne, resultTwo, resultThree, resultFour, xLabel, yLabel, outputTitle, savedLocation)
+
+    # Now test against Unsucessfull Mappings
+
+    resultOne = testVnfCon.testUnsuccMappings(1, 6)
+    resultTwo = testVnfCon.testUnsuccMappings(2, 6)
+    resultThree = testVnfCon.testUnsuccMappings(3, 6)
+    resultFour = testVnfCon.testUnsuccMappings(4, 6)
+    savedLocation = "ResultsFour/vnfConTwo.png"
+    yLabel = "Number of Unsuccesfull Mappings"
+
+    #  Now that we have all the results with the subsequent arrays
+
+    outputFigure(resultOne, resultTwo, resultThree, resultFour, xLabel, yLabel, outputTitle, savedLocation)
+
+    # Test Against Avail Resources
+
+    resultOne = testVnfCon.testAvailRes(1, 6)
+    resultTwo = testVnfCon.testAvailRes(2, 6)
+    resultThree = testVnfCon.testAvailRes(3, 6)
+    resultFour = testVnfCon.testAvailRes(4, 6)
+    savedLocation = "ResultsFour/vnfConThree.png"
+    yLabel = "Amount of Available Resources"
+
+    #  Now that we have all the results with the subsequent arrays
+
+    outputFigure(resultOne, resultTwo, resultThree, resultFour, xLabel, yLabel, outputTitle, savedLocation)
+
+    # Test Against Avail Resources
+
+    resultOne = testVnfCon.testExhaustRes(1, 6)
+    resultTwo = testVnfCon.testExhaustRes(2, 6)
+    resultThree = testVnfCon.testExhaustRes(3, 6)
+    resultFour = testVnfCon.testExhaustRes(4, 6)
+    savedLocation = "ResultsFour/vnfConFour.png"
+    yLabel = "Amount of Exhausted Resources"
+
+    #  Now that we have all the results with the subsequent arrays
+
+    outputFigure(resultOne, resultTwo, resultThree, resultFour, xLabel, yLabel, outputTitle, savedLocation)

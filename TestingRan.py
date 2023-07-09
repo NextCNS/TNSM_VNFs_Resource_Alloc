@@ -1,6 +1,6 @@
-import AlgorithmOne as algoOne
-import AlgorithmTwo as algoTwo
-import AlgorithmThree as algoThree
+import Algorithms.RBA as algoOne
+import Algorithms.GCBA as algoTwo
+import Algorithms.GBA as algoThree
 from graph_tool.all import *
 import random
 import TotalNetwork as tn

@@ -1,11 +1,12 @@
-import AlgorithmOne as algoOne
-import AlgorithmTwo as algoTwo
-import AlgorithmThree as algoThree
+import Algorithms.RBA as algoOne
+import Algorithms.GCBA as algoTwo
+import Algorithms.GBA as algoThree
 from graph_tool.all import *
 import random
 import TotalNetwork as tn
 import matplotlib.pyplot as plt
 
+intervalFactor = -1
 # (1) No. of Connections vnf vs No. of Succesfull Mapings 
 
 def testSuccMappings(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = tn.intervalFactor, iterations=tn.iterCount):
@@ -15,7 +16,7 @@ def testSuccMappings(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = t
     xOne = []
     yOne = []
 
-    substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=tn.randUpBound)
+    substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=tn.randUpBoundVnf)
 
     for ctrVar in range(iterations):
         
@@ -56,7 +57,7 @@ def testUnsuccMappings(algoType, connectivityVnf= tn.vnfDegree, intervalFactor =
     xOne = []
     yOne = []
 
-    substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=tn.randUpBound)
+    substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=tn.randUpBoundVnf)
 
     for ctrVar in range(iterations):
         
@@ -98,7 +99,7 @@ def testAvailRes(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = tn.in
     xOne = []
     yOne = []
 
-    substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=tn.randUpBound)
+    substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=tn.randUpBoundVnf)
 
     for ctrVar in range(iterations):
         
@@ -141,7 +142,7 @@ def testExhaustRes(algoType, connectivityVnf= tn.vnfDegree, intervalFactor = tn.
     xOne = []
     yOne = []
 
-    substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=tn.randUpBound)
+    substrateNetwork = tn.createSbsNetwork(tn.numSubsNodes, tn.resCapList, tn.resCtPerSbs, connectivity=tn.sbsDegree, random_range=tn.randUpBoundVnf)
 
     for ctrVar in range(iterations):
         

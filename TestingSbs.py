@@ -1,7 +1,7 @@
 import Substrate as sbs
 import RAN_Slice as ran
 import numpy as np
-import AlgorithmOne as algoOne
+import Algorithms.RBA as algoOne
 from graph_tool.all import *
 import random
 import matplotlib.pyplot as plt
